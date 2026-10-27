@@ -1,0 +1,349 @@
+@font-face {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+    src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-solid-900.woff2") format("woff2");
+}
+
+
+:root {
+    --primary: #C778DD;
+    --secondary: #FFFFFF;
+    --bg: #1e1e1e;
+    --bg-card: #2a2a2a;
+    --text: #b3b3b3;
+    --text-muted: #888;
+    --radius: 10px;
+    --transition: 0.3s ease;
+}
+
+/* --- Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+address {
+    font-style: normal;
+}
+
+figure {
+    margin: 0;
+}
+
+/* --- Base --- */
+body {
+    font-family: "Trebuchet MS", sans-serif;
+    background-color: var(--bg);
+    color: var(--secondary);
+    line-height: 1.6;
+}
+
+/* --- Header --- */
+body > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 60px;
+    background-color: var(--bg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.profile {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.left h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.left p {
+    font-size: 0.9rem;
+    color: var(--primary);
+    margin-top: 4px;
+}
+
+/* --- Navigation --- */
+nav {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    color: var(--secondary);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+nav a span {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+/* --- Layout --- */
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 60px auto;
+}
+
+section {
+    margin-bottom: 80px;
+}
+
+/* --- Section header --- */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.section-header::before {
+    content: "";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--primary);
+    font-size: 1.3rem;
+}
+
+.section-header h2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* --- Content --- */
+.section-content {
+    color: var(--text);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.section-content p {
+    margin-bottom: 12px;
+}
+
+.infos p {
+    color: var(--secondary);
+    font-size: 0.9rem;
+}
+
+/* --- Skills --- */
+.skills {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skill span {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.bar {
+    background-color: #3a3a3a;
+    border-radius: var(--radius);
+    overflow: hidden;
+    height: 10px;
+}
+
+.progress {
+    height: 10px;
+    background-color: var(--primary);
+    border-radius: var(--radius);
+    width: 0;
+    animation: fillBar 1.5s forwards;
+}
+
+@keyframes fillBar {
+    from {
+        width: 0;
+    }
+}
+
+.progress.html {
+    width: 100%;
+    animation-delay: 0.2s;
+}
+
+.progress.css {
+    width: 80%;
+    animation-delay: 0.4s;
+}
+
+.progress.php {
+    width: 90%;
+    animation-delay: 0.6s;
+}
+
+.progress.mysql {
+    width: 85%;
+    animation-delay: 0.8s;
+}
+
+.progress.java {
+    width: 60%;
+    animation-delay: 1s;
+}
+
+/* --- Experience --- */
+.experience-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.experience-card {
+    flex: 1 1 250px;
+    background-color: var(--bg-card);
+    border-radius: var(--radius);
+    box-shadow: 0 0 0 transparent;
+    transition: var(--transition);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-card:hover {
+    box-shadow: 0 0 15px rgba(199, 120, 221, 0.3);
+}
+
+.experience-card-body {
+    padding: 20px;
+    flex: 1;
+}
+
+.experience-img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    display: block;
+}
+
+.experience-card h3 {
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.experience-card .location {
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+.experience-card .type {
+    color: var(--primary);
+    text-transform: uppercase;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.experience-card .date {
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+/* --- Formation --- */
+.formation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formation-card {
+    background-color: var(--bg-card);
+    padding: 15px 20px;
+    border-radius: var(--radius);
+    color: var(--secondary);
+    transition: var(--transition);
+}
+
+.formation-card:hover {
+    box-shadow: 0 0 15px rgba(199, 120, 221, 0.3);
+}
+
+.highlight {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+
+footer {
+    text-align: center;
+    color: var(--text);
+}
+
+@media (max-width: 720px) {
+    body > header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .left h1 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    nav a {
+        font-size: 0.95rem;
+    }
+
+    main {
+        width: 95%;
+        margin: 40px auto;
+    }
+
+    .section-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .experience-list {
+        flex-direction: column;
+    }
+
+    .experience-card {
+        width: 100%;
+    }
+
+    .formation-card {
+        padding: 12px 16px;
+    }
+}

@@ -1,0 +1,4 @@
+.DS_Store
+public.zip
+node_modules/
+.env
